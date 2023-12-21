@@ -48,9 +48,9 @@ app.get("/api/get",async(req,res)=>{
 
 app.put("/api/update/:id",async(req,res)=>{
     const {id} = req.params
-    const { image,price,description } = req.body;
+    const { name,price,description } = req.body;
     try {
-        const response = await MainDataModel.findByIdAndUpdate(id,{$set:{image,price,description}});
+        const response = await MainDataModel.findByIdAndUpdate(id,{$set:{name,price,description}});
         res.json(response);
     } catch (error) {
         console.log(error.message);
